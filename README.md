@@ -11,7 +11,7 @@
 
 <img src="./gitAssets/main.png">
 
-Esse é apenas um projeto para treinar meu VueJS que estou apredendo no curso da Origamid, você pode acessalo clicando [aqui](gitAssets/main.png).
+Esse é apenas um projeto para treinar meu VueJS que estou apredendo no curso da Origamid, você pode acessalo clicando [aqui](http://tecno.kauadev.xyz).
 
 Nesse projeto tem algumas das principais tecnologias do Vue, como o Vue Router.
 
