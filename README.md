@@ -11,12 +11,6 @@
 
 <img src="./gitAssets/main.png">
 
-Esse é apenas um projeto para treinar meu VueJS que estou apredendo no curso da Origamid, você pode acessalo clicando [aqui](http://tecno.kauadev.xyz).
-
-Nesse projeto tem algumas das principais tecnologias do Vue, como o Vue Router.
-
-Esse projeto foi desenvolvido absolutamente do 0, juntamente com uma API que fiz em PHP. você pode ve-la clicando [aqui](http://api.kauadev.xyz/tecnocursos/), ela possui acessos por id, ex: `http://api.kauadev.xyz/tecnocursos/cursos`, facilitando o processo.
-
 Este projeto foi desenvolvido como parte de minha jornada de aprendizado de VueJS, que estou estudando através do curso da Origamid, você pode acessa-lo clicando [aqui](http://tecno.kauadev.xyz).
 
 Ele inclui algumas das principais tecnologias do Vue, como o Vue Router, e foi criado inteiramente a partir do zero. Além disso, criei uma API em PHP para complementar o projeto, que pode ser acessada através do link : `http://api.kauadev.xyz/tecnocursos/`.

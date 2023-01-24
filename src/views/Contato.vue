@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <div v-if="!loading">
-      <h1>Contato</h1>
-      <p>{{ contatoInfo.descricao }}</p>
-      <ul>
-        <li v-for="(contato, metodo) in contatoInfo.contato" :key="metodo">
-          <span>{{ metodo }}</span> {{ contato }}
-        </li>
-      </ul>
-    </div>
-    <LoadingAnimation v-else />
+    <transition mode="out-in" appear>
+      <div v-if="!loading">
+        <h1>Contato</h1>
+        <p>{{ contatoInfo.descricao }}</p>
+        <ul>
+          <li v-for="(contato, metodo) in contatoInfo.contato" :key="metodo">
+            <span>{{ metodo }}</span> {{ contato }}
+          </li>
+        </ul>
+      </div>
+      <LoadingAnimation v-else />
+    </transition>
   </div>
 </template>
 <script>

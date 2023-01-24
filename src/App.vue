@@ -16,4 +16,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.v-enter-active {
+  transition: 0.3s;
+}
+
+.v-enter-from {
+  transform: translate3d(-100px, 0px, 0px);
+}
+</style>

@@ -37,5 +37,7 @@ export default {
   display: block;
   width: max-content;
   text-decoration: none;
+  text-align: center;
+  min-width: 50px;
 }
 </style>

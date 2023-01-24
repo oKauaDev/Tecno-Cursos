@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <div id="fullapp" v-if="!loadingPage">
-      <div class="cursoInfo">
-        <h1>{{ cursoData.nome }}</h1>
-        <p>{{ cursoData.descricao }}</p>
-        <h1>Aulas</h1>
-        <button
-          v-for="aula in cursoData.aulas"
-          :key="aula.id"
-          @click="toAula(cursoData.id, aula.id)"
-          :class="selectAula === aula.id ? 'selected' : ''"
-        >
-          {{ aula.nome }}
-        </button>
-      </div>
-      <div v-if="loadingAula !== null">
-        <LoadingAnimation v-if="loadingAula === true" />
-        <div v-else class="aulaInfo">
-          <h1>{{ aulaInfo.nome }}</h1>
-          <iframe :title="aulaInfo.nome" :src="getUrl(aulaInfo.youtube)"> </iframe>
+    <transition mode="out-in" appear>
+      <div id="fullapp" v-if="!loadingPage">
+        <div class="cursoInfo">
+          <h1>{{ cursoData.nome }}</h1>
+          <p>{{ cursoData.descricao }}</p>
+          <h1>Aulas</h1>
+          <button
+            v-for="aula in cursoData.aulas"
+            :key="aula.id"
+            @click="toAula(cursoData.id, aula.id)"
+            :class="selectAula === aula.id ? 'selected' : ''"
+          >
+            {{ aula.nome }}
+          </button>
+        </div>
+        <div v-if="loadingAula !== null">
+          <LoadingAnimation v-if="loadingAula === true" />
+          <div v-else class="aulaInfo">
+            <h1>{{ aulaInfo.nome }}</h1>
+            <iframe :title="aulaInfo.nome" :src="getUrl(aulaInfo.youtube)"> </iframe>
+          </div>
         </div>
       </div>
-    </div>
-    <LoadingAnimation v-else />
+      <LoadingAnimation v-else />
+    </transition>
   </div>
 </template>
 <script>

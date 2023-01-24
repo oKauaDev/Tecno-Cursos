@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <div id="fullapp" v-if="!loading">
-      <h1>Sobre o TecnoCursos</h1>
-      <p>{{ apiData.descricao }}</p>
-      <TecnoButton to="/cursos">Cursos</TecnoButton>
-      <h2>Avaliações</h2>
-      <ul>
-        <li v-for="avaliacao in apiData.avaliacoes" :key="avaliacao.nome">
-          <h4>{{ avaliacao.nome }}</h4>
-          <p>{{ avaliacao.descricao }}</p>
-        </li>
-      </ul>
-    </div>
-    <LoadingAnimation v-else></LoadingAnimation>
+    <transition mode="out-in" appear>
+      <div id="fullapp" v-if="!loading">
+        <h1>Sobre o TecnoCursos</h1>
+        <p>{{ apiData.descricao }}</p>
+        <TecnoButton to="/cursos">Cursos</TecnoButton>
+        <h2>Avaliações</h2>
+        <ul>
+          <li v-for="avaliacao in apiData.avaliacoes" :key="avaliacao.nome">
+            <h4>{{ avaliacao.nome }}</h4>
+            <p>{{ avaliacao.descricao }}</p>
+          </li>
+        </ul>
+      </div>
+      <LoadingAnimation v-else></LoadingAnimation>
+    </transition>
   </div>
 </template>
 <script>

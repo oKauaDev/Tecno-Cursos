@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <div id="fullapp" v-if="!loading">
-      <div>
-        <h1>Nossos Cursos</h1>
-        <p>{{ apiData.descricao }}</p>
-      </div>
-      <div>
-        <div
-          v-for="curso in apiData.cursos"
-          :key="curso.id"
-          class="curso"
-          @click="redirect(`/curso/${curso.id}`)"
-        >
-          <h1>{{ curso.nome }} - {{ curso.totalAulas }} Aulas | {{ curso.horas }} Horas</h1>
-          <p>{{ curso.descricao }}</p>
+    <transition mode="out-in" appear>
+      <div id="fullapp" v-if="!loading">
+        <div>
+          <h1>Nossos Cursos</h1>
+          <p>{{ apiData.descricao }}</p>
+        </div>
+        <div>
+          <div
+            v-for="curso in apiData.cursos"
+            :key="curso.id"
+            class="curso"
+            @click="redirect(`/curso/${curso.id}`)"
+          >
+            <h1>{{ curso.nome }} - {{ curso.totalAulas }} Aulas | {{ curso.horas }} Horas</h1>
+            <p>{{ curso.descricao }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <LoadingAnimation v-else />
+      <LoadingAnimation v-else />
+    </transition>
   </div>
 </template>
 <script>
